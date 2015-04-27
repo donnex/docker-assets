@@ -8,6 +8,8 @@ RUN apt-get update && \
     gem install breakpoint && \
     ln -s /usr/bin/nodejs /usr/bin/node && \
     npm install -g gulp && \
+    npm install -g bower && \
+    npm install -g bower-installer && \
     rm -rf /var/lib/apt/lists/*
 
 WORKDIR /gulp
