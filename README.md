@@ -7,3 +7,5 @@ A Docker asset building container.
 - Compass breakpoint module
 - Gulp
 - Gulp modules
+- Bower
+- bower-installer
