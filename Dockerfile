@@ -2,7 +2,7 @@ FROM ubuntu:14.04
 MAINTAINER Daniel Johansson <donnex@donnex.net>
 
 RUN apt-get update && \
-    apt-get install -y ruby ruby-dev build-essential nodejs npm libnotify-bin && \
+    apt-get install -y ruby ruby-dev build-essential nodejs npm libnotify-bin git-core && \
     gem install sass && \
     gem install compass && \
     gem install breakpoint && \
