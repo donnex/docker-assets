@@ -2,11 +2,12 @@ FROM ubuntu:14.04
 MAINTAINER Daniel Johansson <donnex@donnex.net>
 
 RUN apt-get update && \
-    apt-get install -y ruby ruby-dev build-essential nodejs npm libnotify-bin git-core && \
+    apt-get install -y ruby ruby-dev build-essential libnotify-bin git-core curl && \
+    curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash - && \
+    sudo apt-get install -y nodejs && \
     gem install sass && \
     gem install compass && \
     gem install breakpoint && \
-    ln -s /usr/bin/nodejs /usr/bin/node && \
     npm install -g gulp && \
     npm install -g bower && \
     npm install -g bower-installer && \
@@ -31,4 +32,4 @@ RUN npm install \
 RUN useradd -ms /bin/bash assets
 USER assets
 
-ENTRYPOINT ["/usr/local/bin/gulp"]
+ENTRYPOINT ["/usr/bin/gulp"]
