@@ -3,8 +3,8 @@ MAINTAINER Daniel Johansson <donnex@donnex.net>
 
 RUN apt-get update && \
     apt-get install -y ruby ruby-dev build-essential libnotify-bin git-core curl && \
-    curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash - && \
-    sudo apt-get install -y nodejs && \
+    curl -sL https://deb.nodesource.com/setup_4.x | bash - && \
+    apt-get install -y nodejs && \
     gem install sass && \
     gem install compass && \
     gem install breakpoint && \
