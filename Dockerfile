@@ -2,9 +2,13 @@ FROM ubuntu:14.04
 MAINTAINER Daniel Johansson <donnex@donnex.net>
 
 RUN apt-get update && \
-    apt-get install -y ruby ruby-dev build-essential libnotify-bin git-core curl && \
+    apt-get install -y build-essential libnotify-bin git-core curl software-properties-common && \
     curl -sL https://deb.nodesource.com/setup_4.x | bash - && \
     apt-get install -y nodejs && \
+    apt-add-repository -y ppa:brightbox/ruby-ng && \
+    apt-get update && \
+    apt-get install -y ruby2.3 ruby2.3-dev ruby-switch && \
+    ruby-switch --set ruby2.3 && \
     gem install sass && \
     gem install compass && \
     gem install breakpoint && \
